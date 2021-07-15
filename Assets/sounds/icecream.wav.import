@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/icecream.wav-129b2c07d91cbeb6d3518ad476bf65c3.sample"
+
+[deps]
+
+source_file="res://Assets/sounds/icecream.wav"
+dest_files=[ "res://.import/icecream.wav-129b2c07d91cbeb6d3518ad476bf65c3.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

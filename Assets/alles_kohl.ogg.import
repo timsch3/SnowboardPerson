@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/alles_kohl.ogg-fc78ca3bd9df22459cd9420c216d8fc3.oggstr"
+
+[deps]
+
+source_file="res://Assets/alles_kohl.ogg"
+dest_files=[ "res://.import/alles_kohl.ogg-fc78ca3bd9df22459cd9420c216d8fc3.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

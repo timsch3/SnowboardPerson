@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/FX1kc3v6a.WAV-3f0f46a91a6f62a5fc1549647d1355af.sample"
+
+[deps]
+
+source_file="res://cakewalk/ride/Audio/FX1kc3v6a.WAV"
+dest_files=[ "res://.import/FX1kc3v6a.WAV-3f0f46a91a6f62a5fc1549647d1355af.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

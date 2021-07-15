@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/checkpoint, Spur 1, Bearbeiten (1).wav-e59764a2a997fe2a9ad038599e0c319b.sample"
+
+[deps]
+
+source_file="res://cakewalk/checkpoint/Audio/checkpoint, Spur 1, Bearbeiten (1).wav"
+dest_files=[ "res://.import/checkpoint, Spur 1, Bearbeiten (1).wav-e59764a2a997fe2a9ad038599e0c319b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

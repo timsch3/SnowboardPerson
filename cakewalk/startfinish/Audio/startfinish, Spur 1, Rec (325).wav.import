@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/startfinish, Spur 1, Rec (325).wav-93a226aea6f258cb6b99217061932c34.sample"
+
+[deps]
+
+source_file="res://cakewalk/startfinish/Audio/startfinish, Spur 1, Rec (325).wav"
+dest_files=[ "res://.import/startfinish, Spur 1, Rec (325).wav-93a226aea6f258cb6b99217061932c34.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

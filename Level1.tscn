@@ -1,0 +1,1828 @@
+[gd_scene load_steps=117 format=2]
+
+[ext_resource path="res://Assets/treetop.png" type="Texture" id=1]
+[ext_resource path="res://Assets/sounds/fartel.wav" type="AudioStream" id=2]
+[ext_resource path="res://Assets/steelH.png" type="Texture" id=3]
+[ext_resource path="res://Assets/bg.png" type="Texture" id=4]
+[ext_resource path="res://Assets/snow_patch.png" type="Texture" id=5]
+[ext_resource path="res://Assets/snow.png" type="Texture" id=6]
+[ext_resource path="res://Icecream.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/steel.png" type="Texture" id=8]
+[ext_resource path="res://Assets/rider.png" type="Texture" id=9]
+[ext_resource path="res://Assets/sounds/icecream.wav" type="AudioStream" id=10]
+[ext_resource path="res://Player.gd" type="Script" id=11]
+[ext_resource path="res://PickupDetector.gd" type="Script" id=12]
+[ext_resource path="res://Assets/wood.png" type="Texture" id=13]
+[ext_resource path="res://zerofriction.tres" type="PhysicsMaterial" id=14]
+[ext_resource path="res://Assets/woodH.png" type="Texture" id=15]
+[ext_resource path="res://Assets/intro_faster.png" type="Texture" id=16]
+[ext_resource path="res://Assets/intro_jump.png" type="Texture" id=18]
+[ext_resource path="res://Assets/intro_slower.png" type="Texture" id=19]
+[ext_resource path="res://Assets/sounds/land.wav" type="AudioStream" id=20]
+[ext_resource path="res://Assets/start.png" type="Texture" id=21]
+[ext_resource path="res://Seesaw.gd" type="Script" id=22]
+[ext_resource path="res://Assets/spikes.png" type="Texture" id=23]
+[ext_resource path="res://Assets/balloon.png" type="Texture" id=24]
+[ext_resource path="res://Assets/mountain.png" type="Texture" id=25]
+[ext_resource path="res://Assets/cloud.png" type="Texture" id=26]
+[ext_resource path="res://Assets/lane.png" type="Texture" id=27]
+[ext_resource path="res://Checkpoint.tscn" type="PackedScene" id=28]
+[ext_resource path="res://Assets/wooden_wheel.png" type="Texture" id=29]
+[ext_resource path="res://Assets/sounds/ride.wav" type="AudioStream" id=30]
+[ext_resource path="res://Assets/sounds/jump.wav" type="AudioStream" id=31]
+[ext_resource path="res://Assets/sounds/checkpoint.wav" type="AudioStream" id=32]
+[ext_resource path="res://Assets/sounds/balloon.wav" type="AudioStream" id=33]
+[ext_resource path="res://Assets/sounds/startfinish.wav" type="AudioStream" id=34]
+
+[sub_resource type="Animation" id=1]
+resource_name = "sunset"
+length = 120.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 60, 119.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 0.921569, 1 ), Color( 0.839216, 0.352941, 0.352941, 1 ), Color( 0.101961, 0.0901961, 0.0901961, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Light2D:energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 120 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.1, 2.0 ]
+}
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 1942.39, 31.9929 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 5201.06, 28.8017 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 1856.04, 211.841 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 584.887, 155.952 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 50028.8, 93.4453 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 194.904, 72.6704 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 102.388, 41.9644 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 542.463, 12.5964 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 563.148, 11.846 )
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 106.16, 40.292 )
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 112.767, 38.4641 )
+
+[sub_resource type="RectangleShape2D" id=13]
+extents = Vector2( 20.1045, 17.1482 )
+
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 19.8408, 19.7373 )
+
+[sub_resource type="RectangleShape2D" id=15]
+extents = Vector2( 19.4092, 105.769 )
+
+[sub_resource type="PhysicsMaterial" id=16]
+rough = true
+
+[sub_resource type="CircleShape2D" id=17]
+radius = 47.3957
+
+[sub_resource type="RectangleShape2D" id=18]
+extents = Vector2( 139.662, 3.68262 )
+
+[sub_resource type="RectangleShape2D" id=19]
+extents = Vector2( 139.602, 57.479 )
+
+[sub_resource type="RectangleShape2D" id=20]
+extents = Vector2( 19.5098, 119.5 )
+
+[sub_resource type="RectangleShape2D" id=21]
+extents = Vector2( 8.66797, 79.1416 )
+
+[sub_resource type="RectangleShape2D" id=22]
+extents = Vector2( 139.824, 3.99707 )
+
+[sub_resource type="RectangleShape2D" id=23]
+extents = Vector2( 139.662, 3.68262 )
+
+[sub_resource type="RectangleShape2D" id=24]
+extents = Vector2( 10.4014, 119.245 )
+
+[sub_resource type="CircleShape2D" id=25]
+radius = 65.4755
+
+[sub_resource type="RectangleShape2D" id=26]
+extents = Vector2( 20.2637, 20.5844 )
+
+[sub_resource type="RectangleShape2D" id=27]
+extents = Vector2( 19.3323, 374.919 )
+
+[sub_resource type="RectangleShape2D" id=28]
+extents = Vector2( 18.9365, 45.6221 )
+
+[sub_resource type="RectangleShape2D" id=29]
+extents = Vector2( 19.9268, 55.3652 )
+
+[sub_resource type="RectangleShape2D" id=30]
+extents = Vector2( 19.7266, 79.5129 )
+
+[sub_resource type="RectangleShape2D" id=31]
+extents = Vector2( 11.3525, 151.914 )
+
+[sub_resource type="PhysicsMaterial" id=32]
+rough = true
+
+[sub_resource type="RectangleShape2D" id=33]
+extents = Vector2( 1342.49, 13.9827 )
+
+[sub_resource type="RectangleShape2D" id=34]
+extents = Vector2( 10.3115, 131.099 )
+
+[sub_resource type="PhysicsMaterial" id=35]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="RectangleShape2D" id=36]
+extents = Vector2( 999.41, 2.93506 )
+
+[sub_resource type="PhysicsMaterial" id=37]
+rough = true
+
+[sub_resource type="RectangleShape2D" id=38]
+extents = Vector2( 425.095, 14.2393 )
+
+[sub_resource type="RectangleShape2D" id=39]
+extents = Vector2( 645.889, 11.8524 )
+
+[sub_resource type="RectangleShape2D" id=40]
+extents = Vector2( 2497.69, 14.3699 )
+
+[sub_resource type="RectangleShape2D" id=41]
+extents = Vector2( 576.072, 5.61047 )
+
+[sub_resource type="RectangleShape2D" id=42]
+extents = Vector2( 299.982, 13.7178 )
+
+[sub_resource type="RectangleShape2D" id=43]
+extents = Vector2( 22.6924, 240.759 )
+
+[sub_resource type="AtlasTexture" id=44]
+atlas = ExtResource( 24 )
+region = Rect2( 0, 0, 80, 160 )
+
+[sub_resource type="AtlasTexture" id=45]
+atlas = ExtResource( 24 )
+region = Rect2( 80, 0, 80, 160 )
+
+[sub_resource type="AtlasTexture" id=46]
+atlas = ExtResource( 24 )
+region = Rect2( 160, 0, 80, 160 )
+
+[sub_resource type="AtlasTexture" id=47]
+atlas = ExtResource( 24 )
+region = Rect2( 240, 0, 80, 160 )
+
+[sub_resource type="AtlasTexture" id=48]
+atlas = ExtResource( 24 )
+region = Rect2( 320, 0, 80, 160 )
+
+[sub_resource type="AtlasTexture" id=49]
+atlas = ExtResource( 24 )
+region = Rect2( 400, 0, 80, 160 )
+
+[sub_resource type="AtlasTexture" id=50]
+atlas = ExtResource( 24 )
+region = Rect2( 480, 0, 80, 160 )
+
+[sub_resource type="AtlasTexture" id=51]
+atlas = ExtResource( 24 )
+region = Rect2( 560, 0, 80, 160 )
+
+[sub_resource type="SpriteFrames" id=52]
+animations = [ {
+"frames": [ SubResource( 44 ), SubResource( 45 ), SubResource( 46 ), SubResource( 47 ), SubResource( 48 ), SubResource( 49 ), SubResource( 50 ), SubResource( 51 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=53]
+extents = Vector2( 7.4209, 1068.27 )
+
+[sub_resource type="PhysicsMaterial" id=54]
+friction = 0.0
+bounce = 1.0
+absorbent = true
+
+[sub_resource type="AtlasTexture" id=55]
+atlas = ExtResource( 9 )
+region = Rect2( 0, 0, 60, 60 )
+
+[sub_resource type="AtlasTexture" id=56]
+atlas = ExtResource( 9 )
+region = Rect2( 60, 0, 60, 60 )
+
+[sub_resource type="AtlasTexture" id=57]
+atlas = ExtResource( 9 )
+region = Rect2( 120, 0, 60, 60 )
+
+[sub_resource type="AtlasTexture" id=58]
+atlas = ExtResource( 9 )
+region = Rect2( 180, 60, 60, 60 )
+
+[sub_resource type="AtlasTexture" id=59]
+atlas = ExtResource( 9 )
+region = Rect2( 240, 60, 60, 60 )
+
+[sub_resource type="AtlasTexture" id=60]
+atlas = ExtResource( 9 )
+region = Rect2( 300, 60, 60, 60 )
+
+[sub_resource type="AtlasTexture" id=61]
+atlas = ExtResource( 9 )
+region = Rect2( 180, 0, 60, 60 )
+
+[sub_resource type="AtlasTexture" id=62]
+atlas = ExtResource( 9 )
+region = Rect2( 240, 0, 60, 60 )
+
+[sub_resource type="AtlasTexture" id=63]
+atlas = ExtResource( 9 )
+region = Rect2( 300, 0, 60, 60 )
+
+[sub_resource type="AtlasTexture" id=64]
+atlas = ExtResource( 9 )
+region = Rect2( 0, 240, 60, 60 )
+
+[sub_resource type="AtlasTexture" id=65]
+atlas = ExtResource( 9 )
+region = Rect2( 60, 240, 60, 60 )
+
+[sub_resource type="AtlasTexture" id=66]
+atlas = ExtResource( 9 )
+region = Rect2( 0, 120, 60, 60 )
+
+[sub_resource type="AtlasTexture" id=67]
+atlas = ExtResource( 9 )
+region = Rect2( 60, 120, 60, 60 )
+
+[sub_resource type="AtlasTexture" id=68]
+atlas = ExtResource( 9 )
+region = Rect2( 120, 120, 60, 60 )
+
+[sub_resource type="AtlasTexture" id=69]
+atlas = ExtResource( 9 )
+region = Rect2( 180, 120, 60, 60 )
+
+[sub_resource type="AtlasTexture" id=70]
+atlas = ExtResource( 9 )
+region = Rect2( 0, 60, 60, 60 )
+
+[sub_resource type="AtlasTexture" id=71]
+atlas = ExtResource( 9 )
+region = Rect2( 60, 60, 60, 60 )
+
+[sub_resource type="AtlasTexture" id=72]
+atlas = ExtResource( 9 )
+region = Rect2( 120, 60, 60, 60 )
+
+[sub_resource type="AtlasTexture" id=73]
+atlas = ExtResource( 9 )
+region = Rect2( 0, 180, 60, 60 )
+
+[sub_resource type="AtlasTexture" id=74]
+atlas = ExtResource( 9 )
+region = Rect2( 60, 180, 60, 60 )
+
+[sub_resource type="AtlasTexture" id=75]
+atlas = ExtResource( 9 )
+region = Rect2( 120, 180, 60, 60 )
+
+[sub_resource type="SpriteFrames" id=76]
+animations = [ {
+"frames": [ SubResource( 55 ), SubResource( 56 ), SubResource( 57 ) ],
+"loop": true,
+"name": "default",
+"speed": 7.0
+}, {
+"frames": [ SubResource( 58 ), SubResource( 59 ), SubResource( 60 ) ],
+"loop": true,
+"name": "leaning",
+"speed": 7.0
+}, {
+"frames": [ SubResource( 61 ), SubResource( 62 ), SubResource( 63 ) ],
+"loop": false,
+"name": "jumping",
+"speed": 14.0
+}, {
+"frames": [ SubResource( 64 ), SubResource( 65 ) ],
+"loop": true,
+"name": "cheering",
+"speed": 1.5
+}, {
+"frames": [ SubResource( 66 ), SubResource( 67 ), SubResource( 68 ), SubResource( 69 ), SubResource( 69 ), SubResource( 69 ), SubResource( 69 ), SubResource( 69 ), SubResource( 69 ), SubResource( 69 ), SubResource( 69 ), SubResource( 69 ), SubResource( 69 ), SubResource( 69 ), SubResource( 69 ), SubResource( 69 ), SubResource( 69 ), SubResource( 69 ), SubResource( 69 ), SubResource( 69 ) ],
+"loop": false,
+"name": "crashing",
+"speed": 14.0
+}, {
+"frames": [ SubResource( 70 ), SubResource( 71 ), SubResource( 72 ) ],
+"loop": true,
+"name": "flying",
+"speed": 7.0
+}, {
+"frames": [ SubResource( 73 ), SubResource( 74 ), SubResource( 75 ) ],
+"loop": false,
+"name": "stopping",
+"speed": 14.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=77]
+radius = 2.60205
+height = 45.6934
+
+[sub_resource type="CapsuleShape2D" id=78]
+radius = 14.8008
+height = 18.5278
+
+[sub_resource type="RectangleShape2D" id=79]
+extents = Vector2( 14.0039, 13.9834 )
+
+[sub_resource type="RectangleShape2D" id=80]
+extents = Vector2( 14.2793, 21.269 )
+
+[sub_resource type="RectangleShape2D" id=81]
+extents = Vector2( 25.7773, 6.03809 )
+
+[sub_resource type="RectangleShape2D" id=82]
+extents = Vector2( 10, 58.1067 )
+
+[sub_resource type="RectangleShape2D" id=83]
+extents = Vector2( 7.79102, 61.1836 )
+
+[node name="Level1" type="Node2D"]
+position = Vector2( 9063.33, 3226.54 )
+__meta__ = {
+"_edit_vertical_guides_": [ -21172.4 ]
+}
+
+[node name="Background" type="Node2D" parent="."]
+modulate = Color( 1, 1, 0.921569, 1 )
+light_mask = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Background"]
+autoplay = "sunset"
+anims/sunset = SubResource( 1 )
+
+[node name="Light2D" type="Light2D" parent="Background"]
+position = Vector2( 17752.6, -1174.01 )
+rotation = 0.0872665
+scale = Vector2( 2, 2 )
+texture = ExtResource( 26 )
+texture_scale = 50.0
+energy = 0.1
+range_item_cull_mask = 2
+shadow_gradient_length = 4096.0
+
+[node name="bg" type="Sprite" parent="Background"]
+light_mask = 2
+position = Vector2( -25302.2, -5838.74 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="bg2" type="Sprite" parent="Background"]
+light_mask = 2
+position = Vector2( -17650.2, -5168.76 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="bg3" type="Sprite" parent="Background"]
+light_mask = 2
+position = Vector2( -11902.4, -2400.65 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="bg4" type="Sprite" parent="Background"]
+light_mask = 2
+position = Vector2( -5484.63, 508.505 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="bg5" type="Sprite" parent="Background"]
+light_mask = 2
+position = Vector2( -5484.63, 508.505 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="bg6" type="Sprite" parent="Background"]
+light_mask = 2
+position = Vector2( -5484.63, 508.505 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="bg7" type="Sprite" parent="Background"]
+light_mask = 2
+position = Vector2( -5892.38, -7382.59 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="bg8" type="Sprite" parent="Background"]
+light_mask = 2
+position = Vector2( 2094.66, -91.123 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="bg10" type="Sprite" parent="Background"]
+light_mask = 2
+position = Vector2( 9848.73, -3107.67 )
+texture = ExtResource( 4 )
+
+[node name="bg9" type="Sprite" parent="Background"]
+light_mask = 2
+position = Vector2( 7155.99, 2541.58 )
+rotation = -3.14159
+texture = ExtResource( 4 )
+
+[node name="bg11" type="Sprite" parent="Background"]
+light_mask = 2
+position = Vector2( 15131.9, 2394.6 )
+texture = ExtResource( 4 )
+
+[node name="bg12" type="Sprite" parent="Background"]
+light_mask = 2
+position = Vector2( 17769.4, -5389.37 )
+texture = ExtResource( 4 )
+
+[node name="bg13" type="Sprite" parent="Background"]
+light_mask = 2
+position = Vector2( 23080.8, 2549.99 )
+texture = ExtResource( 4 )
+
+[node name="bg15" type="Sprite" parent="Background"]
+light_mask = 2
+position = Vector2( 30874.5, 2675.12 )
+rotation = 3.14159
+texture = ExtResource( 4 )
+
+[node name="bg16" type="Sprite" parent="Background"]
+light_mask = 2
+position = Vector2( 33502.1, -5136.43 )
+rotation = 3.14159
+texture = ExtResource( 4 )
+
+[node name="bg14" type="Sprite" parent="Background"]
+light_mask = 2
+position = Vector2( 25695, -5181.9 )
+texture = ExtResource( 4 )
+
+[node name="bg17" type="Sprite" parent="Background"]
+light_mask = 2
+position = Vector2( 38851.9, 2669.4 )
+rotation = -3.14159
+texture = ExtResource( 4 )
+
+[node name="bg18" type="Sprite" parent="Background"]
+light_mask = 2
+position = Vector2( 41453.9, -5160.74 )
+rotation = -3.14159
+texture = ExtResource( 4 )
+
+[node name="bg19" type="Sprite" parent="Background"]
+light_mask = 2
+position = Vector2( 46835.1, 2561.65 )
+rotation = -3.14159
+texture = ExtResource( 4 )
+
+[node name="Ground" type="StaticBody2D" parent="." groups=[
+"Ground",
+]]
+rotation = 0.261799
+physics_material_override = ExtResource( 14 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Snowsprites" type="Node2D" parent="Ground"]
+modulate = Color( 0.945098, 0.992157, 1, 1 )
+position = Vector2( -403.966, 1374.07 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="snow7" type="Sprite" parent="Ground/Snowsprites"]
+position = Vector2( -23940.5, -7.927 )
+texture = ExtResource( 6 )
+
+[node name="snow6" type="Sprite" parent="Ground/Snowsprites"]
+position = Vector2( -20000, -8 )
+texture = ExtResource( 6 )
+
+[node name="snow5" type="Sprite" parent="Ground/Snowsprites"]
+position = Vector2( -16000, -8 )
+texture = ExtResource( 6 )
+
+[node name="snow4" type="Sprite" parent="Ground/Snowsprites"]
+position = Vector2( -11009, 307.669 )
+rotation = 0.174533
+texture = ExtResource( 6 )
+
+[node name="snow11" type="Sprite" parent="Ground/Snowsprites"]
+position = Vector2( -14802.7, -7.94482 )
+texture = ExtResource( 6 )
+
+[node name="snow9" type="Sprite" parent="Ground/Snowsprites"]
+position = Vector2( -8242.94, 795.413 )
+rotation = 0.174533
+texture = ExtResource( 6 )
+
+[node name="snow12" type="Sprite" parent="Ground/Snowsprites"]
+position = Vector2( -8700.26, -70.4556 )
+rotation = -0.0872665
+texture = ExtResource( 6 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 1250, 800 )
+
+[node name="snow13" type="Sprite" parent="Ground/Snowsprites"]
+position = Vector2( -8356.15, -96.217 )
+rotation = 2.93215
+texture = ExtResource( 6 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 550, 800 )
+
+[node name="snow3" type="Sprite" parent="Ground/Snowsprites"]
+position = Vector2( -5988.95, 115.625 )
+rotation = -0.174533
+texture = ExtResource( 6 )
+
+[node name="snow14" type="Sprite" parent="Ground/Snowsprites"]
+position = Vector2( -7095.4, -309.915 )
+rotation = -0.15708
+texture = ExtResource( 6 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 2050, 800 )
+
+[node name="lane2" type="Sprite" parent="Ground/Snowsprites"]
+position = Vector2( -8525.93, -420.904 )
+rotation = -0.0872665
+scale = Vector2( 0.509498, 1 )
+texture = ExtResource( 27 )
+
+[node name="lane3" type="Sprite" parent="Ground/Snowsprites"]
+position = Vector2( -8267.92, -466.207 )
+rotation = -0.226893
+scale = Vector2( 0.44272, 1 )
+texture = ExtResource( 27 )
+
+[node name="snow_patch" type="Sprite" parent="Ground/Snowsprites"]
+position = Vector2( -8372.04, -404.839 )
+rotation = -0.226893
+texture = ExtResource( 5 )
+
+[node name="snow2" type="Sprite" parent="Ground/Snowsprites"]
+position = Vector2( -2049.8, -578.945 )
+rotation = -0.174533
+texture = ExtResource( 6 )
+
+[node name="snow" type="Sprite" parent="Ground/Snowsprites"]
+position = Vector2( 1850.28, -1264.59 )
+rotation = -0.174533
+texture = ExtResource( 6 )
+
+[node name="snow8" type="Sprite" parent="Ground/Snowsprites"]
+position = Vector2( 5789.43, -1959.12 )
+rotation = -0.174533
+texture = ExtResource( 6 )
+
+[node name="snow10" type="Sprite" parent="Ground/Snowsprites"]
+position = Vector2( 9728.63, -2653.7 )
+rotation = -0.174533
+texture = ExtResource( 6 )
+
+[node name="snow15" type="Sprite" parent="Ground/Snowsprites"]
+position = Vector2( 13666.9, -3348.13 )
+rotation = -0.174533
+texture = ExtResource( 6 )
+
+[node name="snow16" type="Sprite" parent="Ground/Snowsprites"]
+position = Vector2( 17606, -4042.71 )
+rotation = -0.174533
+texture = ExtResource( 6 )
+
+[node name="snow17" type="Sprite" parent="Ground/Snowsprites"]
+position = Vector2( 21545.1, -4737.28 )
+rotation = -0.174533
+texture = ExtResource( 6 )
+
+[node name="snow22" type="Sprite" parent="Ground/Snowsprites"]
+position = Vector2( 25484.3, -5431.86 )
+rotation = -0.174533
+texture = ExtResource( 6 )
+
+[node name="snow21" type="Sprite" parent="Ground/Snowsprites"]
+position = Vector2( 29423.5, -6126.44 )
+rotation = -0.174533
+texture = ExtResource( 6 )
+
+[node name="snow20" type="Sprite" parent="Ground/Snowsprites"]
+position = Vector2( 33361.8, -6820.87 )
+rotation = -0.174533
+texture = ExtResource( 6 )
+
+[node name="snow19" type="Sprite" parent="Ground/Snowsprites"]
+position = Vector2( 37300.9, -7515.45 )
+rotation = -0.174533
+texture = ExtResource( 6 )
+
+[node name="snow18" type="Sprite" parent="Ground/Snowsprites"]
+position = Vector2( 41240, -8210.02 )
+rotation = -0.174533
+texture = ExtResource( 6 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Ground"]
+position = Vector2( -25461.8, 470.024 )
+shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+position = Vector2( -18318.6, 466.844 )
+shape = SubResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Ground"]
+position = Vector2( -11472.6, 943.234 )
+rotation = 0.174533
+shape = SubResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Ground"]
+position = Vector2( -9161.31, 1135.85 )
+rotation = -0.0872665
+shape = SubResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Ground"]
+position = Vector2( 860.156, -634.348 )
+rotation = -0.174533
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Step" type="CollisionShape2D" parent="Ground"]
+position = Vector2( -8700.4, 991.673 )
+rotation = -0.20944
+shape = SubResource( 7 )
+
+[node name="Step2" type="CollisionShape2D" parent="Ground"]
+position = Vector2( -4331.18, 221.583 )
+rotation = -0.0872665
+shape = SubResource( 8 )
+
+[node name="JumpUp" type="CollisionShape2D" parent="Ground"]
+position = Vector2( -8213.56, 703.879 )
+rotation = -0.523599
+shape = SubResource( 9 )
+
+[node name="JumpDown" type="CollisionShape2D" parent="Ground"]
+position = Vector2( -4626.59, 161.839 )
+rotation = 0.174533
+shape = SubResource( 10 )
+
+[node name="Step3" type="CollisionShape2D" parent="Ground"]
+position = Vector2( -3024.57, -6.32922 )
+rotation = -0.261799
+shape = SubResource( 11 )
+
+[node name="Step4" type="CollisionShape2D" parent="Ground"]
+position = Vector2( -2901.3, -44.3364 )
+rotation = -0.436332
+shape = SubResource( 12 )
+
+[node name="SeesawStep" type="CollisionShape2D" parent="Ground"]
+position = Vector2( 905.604, -744.828 )
+rotation = -0.261799
+shape = SubResource( 13 )
+
+[node name="SeesawStep2" type="CollisionShape2D" parent="Ground"]
+position = Vector2( 2822.76, -1089.31 )
+rotation = -0.261799
+shape = SubResource( 14 )
+
+[node name="SeesawStump" type="CollisionShape2D" parent="Ground"]
+position = Vector2( 1863.93, -952.197 )
+rotation = -0.261799
+shape = SubResource( 15 )
+
+[node name="Obstacles" type="Node2D" parent="."]
+position = Vector2( -19667, -4224.04 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="WoodenWheel" type="RigidBody2D" parent="Obstacles" groups=[
+"Ground",
+]]
+position = Vector2( -4073, -1754 )
+mass = 10.0
+physics_material_override = SubResource( 16 )
+gravity_scale = 5.0
+custom_integrator = true
+angular_velocity = 2.0
+angular_damp = 0.0
+script = ExtResource( 22 )
+
+[node name="wooden_wheel" type="Sprite" parent="Obstacles/WoodenWheel"]
+texture = ExtResource( 29 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/WoodenWheel"]
+shape = SubResource( 17 )
+
+[node name="steel" type="Sprite" parent="Obstacles"]
+position = Vector2( -4073.19, -1704.2 )
+texture = ExtResource( 8 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 10, 110 )
+
+[node name="WoodenWheel4" type="RigidBody2D" parent="Obstacles" groups=[
+"Ground",
+]]
+position = Vector2( -2879.7, -1441.69 )
+mass = 10.0
+physics_material_override = SubResource( 16 )
+gravity_scale = 5.0
+custom_integrator = true
+angular_velocity = 2.0
+angular_damp = 0.0
+script = ExtResource( 22 )
+
+[node name="wooden_wheel" type="Sprite" parent="Obstacles/WoodenWheel4"]
+texture = ExtResource( 29 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/WoodenWheel4"]
+shape = SubResource( 17 )
+
+[node name="steel4" type="Sprite" parent="Obstacles"]
+position = Vector2( -2879.7, -1391.69 )
+texture = ExtResource( 8 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 10, 110 )
+
+[node name="Rail" type="StaticBody2D" parent="Obstacles" groups=[
+"Ground",
+]]
+position = Vector2( -1062.7, -935.319 )
+physics_material_override = ExtResource( 14 )
+
+[node name="steel2" type="Sprite" parent="Obstacles/Rail"]
+self_modulate = Color( 0.737255, 0.737255, 0.737255, 1 )
+position = Vector2( -22.6339, 9.71631 )
+rotation = 0.261799
+texture = ExtResource( 8 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 8, 100 )
+
+[node name="steel3" type="Sprite" parent="Obstacles/Rail"]
+self_modulate = Color( 0.737255, 0.737255, 0.737255, 1 )
+position = Vector2( 232.518, 78.3892 )
+rotation = 0.261799
+texture = ExtResource( 8 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 8, 100 )
+
+[node name="steel" type="Sprite" parent="Obstacles/Rail"]
+position = Vector2( 118.906, -7.87988 )
+rotation = 0.261799
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 280, 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Rail"]
+position = Vector2( 119.045, -7.9292 )
+rotation = 0.261799
+shape = SubResource( 18 )
+
+[node name="Box" type="StaticBody2D" parent="Obstacles" groups=[
+"Ground",
+]]
+position = Vector2( -184.117, -678.809 )
+physics_material_override = ExtResource( 14 )
+
+[node name="steel" type="Sprite" parent="Obstacles/Box"]
+position = Vector2( 122.502, 21.8271 )
+rotation = 0.261799
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 280, 120 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Box"]
+position = Vector2( 123.152, 20.106 )
+rotation = 0.261799
+shape = SubResource( 19 )
+
+[node name="Gap" type="StaticBody2D" parent="Obstacles" groups=[
+"Ground",
+]]
+position = Vector2( 639.504, -518.102 )
+physics_material_override = ExtResource( 14 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="steel" type="Sprite" parent="Obstacles/Gap"]
+self_modulate = Color( 0.737255, 0.737255, 0.737255, 1 )
+position = Vector2( -61.6074, -166.785 )
+texture = ExtResource( 8 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 10, 80 )
+
+[node name="icon" type="Sprite" parent="Obstacles/Gap"]
+position = Vector2( -60.4013, -320.207 )
+texture = ExtResource( 8 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 40, 240 )
+
+[node name="icon2" type="Sprite" parent="Obstacles/Gap"]
+position = Vector2( -62.1201, -10.4877 )
+texture = ExtResource( 8 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 40, 240 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Gap"]
+position = Vector2( -60.5684, -320.191 )
+shape = SubResource( 20 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Obstacles/Gap"]
+position = Vector2( -62.0684, -10.708 )
+shape = SubResource( 20 )
+
+[node name="Stump" type="StaticBody2D" parent="Obstacles" groups=[
+"Ground",
+]]
+position = Vector2( 2058.33, -28 )
+rotation = 0.261799
+physics_material_override = ExtResource( 14 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="icon2" type="Sprite" parent="Obstacles/Stump"]
+position = Vector2( -0.386719, -37.7634 )
+scale = Vector2( 0.459131, 1 )
+texture = ExtResource( 8 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 40, 160 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Stump"]
+position = Vector2( -0.394531, -38.3643 )
+shape = SubResource( 21 )
+
+[node name="Rail2" type="StaticBody2D" parent="Obstacles" groups=[
+"Ground",
+]]
+position = Vector2( 3524.18, 282.193 )
+rotation = -0.174533
+physics_material_override = ExtResource( 14 )
+
+[node name="steel2" type="Sprite" parent="Obstacles/Rail2"]
+self_modulate = Color( 0.737255, 0.737255, 0.737255, 1 )
+position = Vector2( -22.6339, 9.71631 )
+rotation = 0.261799
+texture = ExtResource( 8 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 8, 100 )
+
+[node name="steel3" type="Sprite" parent="Obstacles/Rail2"]
+self_modulate = Color( 0.737255, 0.737255, 0.737255, 1 )
+position = Vector2( 232.518, 78.3892 )
+rotation = 0.261799
+texture = ExtResource( 8 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 8, 100 )
+
+[node name="steel" type="Sprite" parent="Obstacles/Rail2"]
+position = Vector2( 118.908, -7.87988 )
+rotation = 0.261799
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 280, 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Rail2"]
+position = Vector2( 118.778, -7.8877 )
+rotation = 0.261799
+shape = SubResource( 22 )
+
+[node name="Rail3" type="StaticBody2D" parent="Obstacles" groups=[
+"Ground",
+]]
+position = Vector2( 4819.3, 559.867 )
+rotation = -0.20944
+physics_material_override = ExtResource( 14 )
+
+[node name="steel2" type="Sprite" parent="Obstacles/Rail3"]
+self_modulate = Color( 0.737255, 0.737255, 0.737255, 1 )
+position = Vector2( -32.1474, 45.221 )
+rotation = 0.261799
+scale = Vector2( 1, 1.73514 )
+texture = ExtResource( 8 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 8, 100 )
+
+[node name="steel3" type="Sprite" parent="Obstacles/Rail3"]
+self_modulate = Color( 0.737255, 0.737255, 0.737255, 1 )
+position = Vector2( 216.985, 136.359 )
+rotation = 0.261799
+scale = Vector2( 1, 2.20029 )
+texture = ExtResource( 8 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 8, 100 )
+
+[node name="steel" type="Sprite" parent="Obstacles/Rail3"]
+position = Vector2( 118.906, -7.87988 )
+rotation = 0.261799
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 280, 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Rail3"]
+position = Vector2( 119.045, -7.9292 )
+rotation = 0.261799
+shape = SubResource( 23 )
+
+[node name="Tree" type="StaticBody2D" parent="Obstacles" groups=[
+"Crash",
+]]
+position = Vector2( 5611.6, 819.451 )
+physics_material_override = ExtResource( 14 )
+
+[node name="wood" type="Sprite" parent="Obstacles/Tree"]
+texture = ExtResource( 13 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 20, 240 )
+
+[node name="treetop" type="Sprite" parent="Obstacles/Tree"]
+position = Vector2( -2.64746, -152.988 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Tree"]
+shape = SubResource( 24 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Obstacles/Tree"]
+position = Vector2( -1.36426, -159.047 )
+shape = SubResource( 25 )
+
+[node name="TreeStump" type="StaticBody2D" parent="Obstacles" groups=[
+"Ground",
+]]
+position = Vector2( 6029.4, 1032.61 )
+rotation = 0.261799
+physics_material_override = ExtResource( 14 )
+
+[node name="wood" type="Sprite" parent="Obstacles/TreeStump"]
+texture = ExtResource( 13 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 40, 40 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/TreeStump"]
+shape = SubResource( 26 )
+
+[node name="Log" type="StaticBody2D" parent="Obstacles" groups=[
+"Ground",
+]]
+position = Vector2( 6579.6, 1097.42 )
+rotation = 1.75755
+physics_material_override = ExtResource( 14 )
+
+[node name="wood" type="Sprite" parent="Obstacles/Log"]
+position = Vector2( -0.936829, 187.956 )
+texture = ExtResource( 13 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 40, 750 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Log"]
+position = Vector2( -0.808899, 186.77 )
+shape = SubResource( 27 )
+
+[node name="TreeStump2" type="StaticBody2D" parent="Obstacles" groups=[
+"Ground",
+]]
+position = Vector2( 6719.29, 1194.42 )
+rotation = 0.261799
+physics_material_override = ExtResource( 14 )
+
+[node name="wood" type="Sprite" parent="Obstacles/TreeStump2"]
+position = Vector2( 3.55859, -11.1311 )
+texture = ExtResource( 13 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 40, 80 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/TreeStump2"]
+position = Vector2( 2.65234, -5.5332 )
+shape = SubResource( 28 )
+
+[node name="TreeGap" type="Node2D" parent="Obstacles"]
+position = Vector2( 6387.83, 1105.37 )
+rotation = 0.261799
+
+[node name="steel" type="Sprite" parent="Obstacles/TreeGap"]
+self_modulate = Color( 0.737255, 0.737255, 0.737255, 1 )
+position = Vector2( 412.38, -126.844 )
+texture = ExtResource( 8 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 10, 160 )
+
+[node name="TreeStump11" type="StaticBody2D" parent="Obstacles/TreeGap" groups=[
+"Ground",
+]]
+position = Vector2( 428.683, -10.3442 )
+physics_material_override = ExtResource( 14 )
+
+[node name="wood" type="Sprite" parent="Obstacles/TreeGap/TreeStump11"]
+position = Vector2( -17.9053, -18.4934 )
+texture = ExtResource( 13 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 40, 90 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/TreeGap/TreeStump11"]
+position = Vector2( -17.6729, -8.21313 )
+shape = SubResource( 29 )
+
+[node name="TreeStump12" type="StaticBody2D" parent="Obstacles/TreeGap" groups=[
+"Ground",
+]]
+position = Vector2( 432.249, -185.63 )
+physics_material_override = ExtResource( 14 )
+
+[node name="wood" type="Sprite" parent="Obstacles/TreeGap/TreeStump12"]
+position = Vector2( -18.0801, -80.9692 )
+texture = ExtResource( 13 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 40, 160 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/TreeGap/TreeStump12"]
+position = Vector2( -18.7549, -80.0649 )
+shape = SubResource( 30 )
+
+[node name="JumpUp" type="StaticBody2D" parent="Obstacles" groups=[
+"Ground",
+]]
+position = Vector2( 11699.3, 2737.31 )
+rotation = -0.261799
+
+[node name="wood" type="Sprite" parent="Obstacles/JumpUp"]
+position = Vector2( 241.21, 128.129 )
+rotation = 0.261799
+texture = ExtResource( 13 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 25, 240 )
+
+[node name="woodH" type="Sprite" parent="Obstacles/JumpUp"]
+position = Vector2( -111.336, 1.02466 )
+texture = ExtResource( 15 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 1000, 25 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/JumpUp"]
+position = Vector2( 231.113, 165.362 )
+rotation = 0.261799
+shape = SubResource( 31 )
+
+[node name="Crashzone" type="StaticBody2D" parent="Obstacles" groups=[
+"Crash",
+]]
+position = Vector2( 13402.4, 2619.65 )
+physics_material_override = SubResource( 32 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Crashzone"]
+position = Vector2( -81.3926, 454.019 )
+rotation = 0.0872665
+shape = SubResource( 33 )
+
+[node name="spikes" type="Sprite" parent="Obstacles/Crashzone"]
+position = Vector2( -80.28, 443.548 )
+rotation = 0.0872665
+texture = ExtResource( 23 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 2680, 50 )
+
+[node name="JumpDown" type="StaticBody2D" parent="Obstacles" groups=[
+"Ground",
+]]
+position = Vector2( 14412.4, 3024.85 )
+rotation = -0.261799
+
+[node name="wood" type="Sprite" parent="Obstacles/JumpDown"]
+position = Vector2( 241.21, 128.129 )
+rotation = 0.261799
+texture = ExtResource( 13 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 25, 240 )
+
+[node name="woodH" type="Sprite" parent="Obstacles/JumpDown"]
+position = Vector2( 551.353, 239.949 )
+rotation = 0.698132
+texture = ExtResource( 15 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 800, 25 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/JumpDown"]
+position = Vector2( 235.06, 150.97 )
+rotation = 0.261799
+shape = SubResource( 34 )
+
+[node name="rampy" type="Sprite" parent="Obstacles"]
+position = Vector2( 16827.1, 3426.04 )
+rotation = 1.39626
+scale = Vector2( 1, 1.60773 )
+texture = ExtResource( 13 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 50, 200 )
+
+[node name="SwingBack" type="StaticBody2D" parent="Obstacles" groups=[
+"Ground",
+]]
+position = Vector2( 18432, 3244.3 )
+rotation = 0.0349066
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstacles/SwingBack"]
+position = Vector2( -6.07568, 6.0752 )
+polygon = PoolVector2Array( 59.1724, -27.2932, 187.677, -4.7417, 271.709, 4.37549, 385.433, 2.5979, 456.644, -3.11987, 522.686, -8.70166, 626.5, -27.2139, 730.83, -70.1182, 823.256, -128.57, 896.797, -216.192, 931.557, -307.636, 946.604, -410.828, 931.256, -504.637, 952.497, -508.437, 969.688, -411.815, 953.14, -303.721, 916.897, -205.755, 839.862, -111.938, 728.136, -44.771, 620.72, -4.30688, 521.062, 14.2528, 395.831, 23.2153, 268.793, 26.4343, 56.2324, -4.91553 )
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Obstacles/SwingBack"]
+position = Vector2( -1116.63, 84.469 )
+polygon = PoolVector2Array( 967.486, -46.1311, 799.817, -133.099, 807.991, -152.081, 1203.58, 48.9915, 1194.7, 67.4761, 1007.44, -25.7603, 1008.23, 201.454, 966.702, 200.671 )
+
+[node name="steel" type="Sprite" parent="Obstacles/SwingBack"]
+position = Vector2( -129.336, 159.895 )
+texture = ExtResource( 8 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 40, 250 )
+
+[node name="steel12" type="Sprite" parent="Obstacles/SwingBack"]
+position = Vector2( 717.165, 113.908 )
+texture = ExtResource( 8 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 40, 320 )
+
+[node name="woodH" type="Sprite" parent="Obstacles/SwingBack"]
+position = Vector2( -115.217, 41.8384 )
+rotation = 0.467748
+scale = Vector2( 1.13857, 0.435801 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 390, 50 )
+
+[node name="steel2" type="Sprite" parent="Obstacles/SwingBack"]
+position = Vector2( 115.82, 1.37109 )
+rotation = 1.7405
+scale = Vector2( 0.737646, 1.62656 )
+texture = ExtResource( 8 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 30, 80 )
+
+[node name="steel3" type="Sprite" parent="Obstacles/SwingBack"]
+position = Vector2( 221.904, 16.8799 )
+rotation = 1.67856
+scale = Vector2( 0.737646, 1.09602 )
+texture = ExtResource( 8 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 30, 80 )
+
+[node name="steel13" type="Sprite" parent="Obstacles/SwingBack"]
+position = Vector2( 319.865, 20.4619 )
+rotation = 1.55634
+scale = Vector2( 0.737646, 1.45426 )
+texture = ExtResource( 8 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 30, 80 )
+
+[node name="steel4" type="Sprite" parent="Obstacles/SwingBack"]
+position = Vector2( 447.549, 14.0173 )
+rotation = 1.48601
+scale = Vector2( 0.737646, 1.79722 )
+texture = ExtResource( 8 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 30, 80 )
+
+[node name="steel5" type="Sprite" parent="Obstacles/SwingBack"]
+position = Vector2( 572.335, -1.55268 )
+rotation = 1.39516
+scale = Vector2( 0.737646, 1.41227 )
+texture = ExtResource( 8 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 30, 80 )
+
+[node name="steel6" type="Sprite" parent="Obstacles/SwingBack"]
+position = Vector2( 681.165, -34.0978 )
+rotation = 1.17821
+scale = Vector2( 0.737646, 1.50533 )
+texture = ExtResource( 8 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 30, 80 )
+
+[node name="steel7" type="Sprite" parent="Obstacles/SwingBack"]
+position = Vector2( 780.44, -85.7131 )
+rotation = 1.00578
+scale = Vector2( 0.737646, 1.41697 )
+texture = ExtResource( 8 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 30, 80 )
+
+[node name="steel8" type="Sprite" parent="Obstacles/SwingBack"]
+position = Vector2( 864.44, -161.426 )
+rotation = 0.696222
+scale = Vector2( 0.737646, 1.54649 )
+texture = ExtResource( 8 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 30, 80 )
+
+[node name="steel9" type="Sprite" parent="Obstacles/SwingBack"]
+position = Vector2( 919.206, -253.893 )
+rotation = 0.366711
+scale = Vector2( 0.737646, 1.32171 )
+texture = ExtResource( 8 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 30, 80 )
+
+[node name="steel10" type="Sprite" parent="Obstacles/SwingBack"]
+position = Vector2( 944.592, -353.79 )
+rotation = 0.143943
+scale = Vector2( 0.737646, 1.36081 )
+texture = ExtResource( 8 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 30, 80 )
+
+[node name="steel11" type="Sprite" parent="Obstacles/SwingBack"]
+position = Vector2( 943.809, -452.379 )
+rotation = -0.163485
+scale = Vector2( 0.737646, 1.21568 )
+texture = ExtResource( 8 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 30, 80 )
+
+[node name="SeesawStep1" type="Sprite" parent="Obstacles"]
+position = Vector2( 20734.8, 3738.72 )
+rotation = -3.8743e-07
+texture = ExtResource( 15 )
+
+[node name="SeesawStep2" type="Sprite" parent="Obstacles"]
+position = Vector2( 22675.3, 3902.82 )
+rotation = -3.8743e-07
+texture = ExtResource( 15 )
+
+[node name="SeesawStump" type="Sprite" parent="Obstacles"]
+position = Vector2( 21713.6, 3783.69 )
+rotation = 2.23517e-08
+scale = Vector2( 1, 3.45534 )
+texture = ExtResource( 13 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 40, 60 )
+
+[node name="Seesaw" type="RigidBody2D" parent="Obstacles" groups=[
+"Ground",
+]]
+position = Vector2( 21712.8, 3671.12 )
+mass = 0.3
+physics_material_override = SubResource( 35 )
+can_sleep = false
+angular_damp = 15.0
+script = ExtResource( 22 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Seesaw"]
+position = Vector2( 2.26074, 4.72192 )
+shape = SubResource( 36 )
+
+[node name="woodH" type="Sprite" parent="Obstacles/Seesaw"]
+position = Vector2( 2.05078, 2.94482 )
+texture = ExtResource( 15 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 2000, 10 )
+
+[node name="Crashzone2" type="StaticBody2D" parent="Obstacles" groups=[
+"Crash",
+]]
+position = Vector2( 23089.9, 3913.83 )
+physics_material_override = SubResource( 37 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Crashzone2"]
+position = Vector2( 51.5859, 15.6616 )
+rotation = 0.0872665
+shape = SubResource( 38 )
+
+[node name="spikes" type="Sprite" parent="Obstacles/Crashzone2"]
+position = Vector2( 52.0215, 3.66113 )
+rotation = 0.0872665
+texture = ExtResource( 23 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 850, 50 )
+
+[node name="Mountain" type="StaticBody2D" parent="Obstacles" groups=[
+"Crash",
+]]
+position = Vector2( 27601.6, 4033.73 )
+physics_material_override = ExtResource( 14 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstacles/Mountain"]
+position = Vector2( -5.86328, -16.4189 )
+polygon = PoolVector2Array( 302.824, 188.516, 390.57, 427.032, 429.658, 581.789, 483.895, 816.316, 533.354, 902.469, -659.565, 940.805, -576.317, 836.991, -505.209, 618.431, -496.793, 559.513, -461.73, 444.26, -400.596, 299.79, -374.143, 207.203, -309.928, 66.2183, -222.637, -253.325, -150.287, -420.535, -69.9746, -654.607, -67.0371, -598.782, -43.5313, -522.39, 32.8613, -388.215, 128.471, -242.503, 227.76, -46.4111 )
+
+[node name="mountain" type="Sprite" parent="Obstacles/Mountain"]
+position = Vector2( -69.5625, 77.5657 )
+texture = ExtResource( 25 )
+
+[node name="Crashzone4" type="StaticBody2D" parent="Obstacles" groups=[
+"Crash",
+]]
+position = Vector2( 28694.6, 3952.17 )
+physics_material_override = SubResource( 32 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Crashzone4"]
+position = Vector2( -81.3926, 454.019 )
+rotation = 0.0872665
+shape = SubResource( 39 )
+
+[node name="spikes" type="Sprite" parent="Obstacles/Crashzone4"]
+position = Vector2( -80.28, 443.548 )
+rotation = 0.0872665
+texture = ExtResource( 23 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 1300, 50 )
+
+[node name="Mountain2" type="StaticBody2D" parent="Obstacles" groups=[
+"Crash",
+]]
+position = Vector2( 29671.2, 4211.69 )
+physics_material_override = ExtResource( 14 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstacles/Mountain2"]
+position = Vector2( -5.86328, -16.4189 )
+polygon = PoolVector2Array( 302.824, 188.516, 390.57, 427.032, 429.658, 581.789, 483.895, 816.316, 533.354, 902.469, -659.565, 940.805, -576.317, 836.991, -505.209, 618.431, -496.793, 559.513, -461.73, 444.26, -400.596, 299.79, -374.143, 207.203, -309.928, 66.2183, -222.637, -253.325, -150.287, -420.535, -69.9746, -654.607, -67.0371, -598.782, -43.5313, -522.39, 32.8613, -388.215, 128.471, -242.503, 227.76, -46.4111 )
+
+[node name="mountain" type="Sprite" parent="Obstacles/Mountain2"]
+position = Vector2( -69.5625, 77.5657 )
+texture = ExtResource( 25 )
+
+[node name="Mountain3" type="StaticBody2D" parent="Obstacles" groups=[
+"Crash",
+]]
+position = Vector2( 60504.2, 6839.22 )
+physics_material_override = ExtResource( 14 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstacles/Mountain3"]
+position = Vector2( -5.86328, -16.4189 )
+polygon = PoolVector2Array( 302.824, 188.516, 390.57, 427.032, 429.658, 581.789, 483.895, 816.316, 533.354, 902.469, -659.565, 940.805, -576.317, 836.991, -505.209, 618.431, -496.793, 559.513, -461.73, 444.26, -400.596, 299.79, -374.143, 207.203, -309.928, 66.2183, -222.637, -253.325, -150.287, -420.535, -69.9746, -654.607, -67.0371, -598.782, -43.5313, -522.39, 32.8613, -388.215, 128.471, -242.503, 227.76, -46.4111 )
+
+[node name="mountain" type="Sprite" parent="Obstacles/Mountain3"]
+position = Vector2( -69.5625, 77.5657 )
+texture = ExtResource( 25 )
+
+[node name="Crashzone3" type="StaticBody2D" parent="Obstacles" groups=[
+"Crash",
+]]
+position = Vector2( 32614.6, 4299.56 )
+physics_material_override = SubResource( 32 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Crashzone3"]
+position = Vector2( -81.3926, 454.019 )
+rotation = 0.0872665
+shape = SubResource( 40 )
+
+[node name="spikes" type="Sprite" parent="Obstacles/Crashzone3"]
+position = Vector2( -80.28, 443.548 )
+rotation = 0.0872665
+texture = ExtResource( 23 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 5000, 50 )
+
+[node name="Cloud" type="StaticBody2D" parent="Obstacles" groups=[
+"Ground",
+]]
+position = Vector2( 29726.7, 3402.86 )
+rotation = 0.0872665
+
+[node name="cloud" type="Sprite" parent="Obstacles/Cloud"]
+texture = ExtResource( 26 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Cloud"]
+position = Vector2( 3.89063, -34.3665 )
+shape = SubResource( 41 )
+
+[node name="Cloud2" type="StaticBody2D" parent="Obstacles" groups=[
+"Ground",
+]]
+position = Vector2( 30860, 3889.7 )
+rotation = 0.436332
+
+[node name="cloud" type="Sprite" parent="Obstacles/Cloud2"]
+texture = ExtResource( 26 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Cloud2"]
+position = Vector2( 3.89063, -34.3665 )
+shape = SubResource( 41 )
+
+[node name="Cloud3" type="StaticBody2D" parent="Obstacles" groups=[
+"Ground",
+]]
+position = Vector2( 32101.8, 4245.95 )
+
+[node name="cloud" type="Sprite" parent="Obstacles/Cloud3"]
+texture = ExtResource( 26 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Cloud3"]
+position = Vector2( 3.89063, -34.3665 )
+shape = SubResource( 41 )
+
+[node name="Cloud4" type="StaticBody2D" parent="Obstacles" groups=[
+"Ground",
+]]
+position = Vector2( 33506.8, 4051.54 )
+rotation = -0.261799
+
+[node name="cloud" type="Sprite" parent="Obstacles/Cloud4"]
+texture = ExtResource( 26 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Cloud4"]
+position = Vector2( 3.89063, -34.3665 )
+shape = SubResource( 41 )
+
+[node name="Crashzone5" type="StaticBody2D" parent="Obstacles" groups=[
+"Crash",
+]]
+position = Vector2( 37607, 4736.53 )
+physics_material_override = SubResource( 32 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Crashzone5"]
+position = Vector2( -81.3926, 454.019 )
+rotation = 0.0872665
+shape = SubResource( 40 )
+
+[node name="spikes" type="Sprite" parent="Obstacles/Crashzone5"]
+position = Vector2( -80.28, 443.548 )
+rotation = 0.0872665
+texture = ExtResource( 23 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 5000, 50 )
+
+[node name="Crashzone6" type="StaticBody2D" parent="Obstacles" groups=[
+"Crash",
+]]
+position = Vector2( 40408.6, 4982.21 )
+physics_material_override = SubResource( 32 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles/Crashzone6"]
+position = Vector2( -81.3926, 454.019 )
+rotation = 0.0872665
+shape = SubResource( 42 )
+
+[node name="spikes" type="Sprite" parent="Obstacles/Crashzone6"]
+position = Vector2( -80.28, 443.548 )
+rotation = 0.0872665
+texture = ExtResource( 23 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 600, 50 )
+
+[node name="Pickups" type="Node2D" parent="."]
+position = Vector2( -12.7753, 25.2741 )
+
+[node name="Icecream" parent="Pickups" instance=ExtResource( 7 )]
+
+[node name="Icecream2" parent="Pickups" instance=ExtResource( 7 )]
+position = Vector2( -1128.47, -904.615 )
+
+[node name="Balloon" type="Area2D" parent="Pickups" groups=[
+"Balloon",
+]]
+position = Vector2( 5648.38, -174.026 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Pickups/Balloon"]
+position = Vector2( 1.91113, 24.3584 )
+shape = SubResource( 43 )
+
+[node name="balloon" type="AnimatedSprite" parent="Pickups/Balloon"]
+frames = SubResource( 52 )
+frame = 5
+playing = true
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Pickups/Balloon"]
+position = Vector2( 0, 30 )
+rotation = 3.14159
+amount = 20
+lifetime = 2.0
+speed_scale = 2.0
+emission_shape = 1
+emission_sphere_radius = 50.0
+scale_amount = 16.0
+scale_amount_random = 0.45
+color = Color( 1, 1, 1, 0.392157 )
+
+[node name="Icecream3" parent="Pickups" instance=ExtResource( 7 )]
+position = Vector2( 13400, -160 )
+
+[node name="Icecream4" parent="Pickups" instance=ExtResource( 7 )]
+position = Vector2( 13500, -188 )
+
+[node name="Icecream5" parent="Pickups" instance=ExtResource( 7 )]
+position = Vector2( 13600, -215 )
+
+[node name="Icecream6" parent="Pickups" instance=ExtResource( 7 )]
+position = Vector2( 13700, -240 )
+
+[node name="Icecream7" parent="Pickups" instance=ExtResource( 7 )]
+position = Vector2( 13800, -268 )
+
+[node name="Icecream8" parent="Pickups" instance=ExtResource( 7 )]
+position = Vector2( 13900, -294 )
+
+[node name="Icecream9" parent="Pickups" instance=ExtResource( 7 )]
+position = Vector2( 14000, -320 )
+
+[node name="Icecream10" parent="Pickups" instance=ExtResource( 7 )]
+position = Vector2( 14100, -348 )
+
+[node name="Icecream11" parent="Pickups" instance=ExtResource( 7 )]
+position = Vector2( 14200, -375 )
+
+[node name="Icecream12" parent="Pickups" instance=ExtResource( 7 )]
+position = Vector2( 14300, -400 )
+
+[node name="Checkpoints" type="Node2D" parent="." groups=[
+"Checkpoints",
+]]
+position = Vector2( 46.2461, 1.87451 )
+
+[node name="CheckpointZero" type="Area2D" parent="Checkpoints"]
+position = Vector2( -22130, -5556.12 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoints/CheckpointZero"]
+position = Vector2( 30.1689, -29.5403 )
+shape = SubResource( 53 )
+
+[node name="Checkpoint00" parent="Checkpoints" instance=ExtResource( 28 )]
+
+[node name="Checkpoint01" parent="Checkpoints" instance=ExtResource( 28 )]
+position = Vector2( -19062, -4907 )
+
+[node name="Checkpoint02" parent="Checkpoints" instance=ExtResource( 28 )]
+position = Vector2( -12892, -3139 )
+
+[node name="Checkpoint03" parent="Checkpoints" instance=ExtResource( 28 )]
+position = Vector2( -381, -1354 )
+
+[node name="Checkpoint04" parent="Checkpoints" instance=ExtResource( 28 )]
+position = Vector2( 10656, -840 )
+
+[node name="wood7" type="Sprite" parent="."]
+position = Vector2( -21908.2, -5492.49 )
+texture = ExtResource( 13 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 10, 100 )
+
+[node name="wood9" type="Sprite" parent="."]
+position = Vector2( 26917.5, 1719.45 )
+texture = ExtResource( 13 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 10, 100 )
+
+[node name="Player" type="RigidBody2D" parent="."]
+position = Vector2( -24312, -6100 )
+physics_material_override = SubResource( 54 )
+gravity_scale = 5.0
+contacts_reported = 1
+contact_monitor = true
+can_sleep = false
+angular_damp = 15.0
+script = ExtResource( 11 )
+
+[node name="TorqueTimer" type="Timer" parent="Player"]
+wait_time = 0.05
+one_shot = true
+
+[node name="GravityTimer" type="Timer" parent="Player"]
+wait_time = 5.0
+one_shot = true
+
+[node name="PickupTimer" type="Timer" parent="Player"]
+wait_time = 0.3
+one_shot = true
+
+[node name="AnimTimer" type="Timer" parent="Player"]
+wait_time = 0.2
+one_shot = true
+
+[node name="Sounds" type="Node" parent="Player"]
+
+[node name="ride" type="AudioStreamPlayer" parent="Player/Sounds"]
+stream = ExtResource( 30 )
+pitch_scale = 0.12
+
+[node name="jump" type="AudioStreamPlayer" parent="Player/Sounds"]
+stream = ExtResource( 31 )
+volume_db = 11.0
+
+[node name="land" type="AudioStreamPlayer" parent="Player/Sounds"]
+stream = ExtResource( 20 )
+
+[node name="fartel" type="AudioStreamPlayer" parent="Player/Sounds"]
+stream = ExtResource( 2 )
+volume_db = 2.0
+
+[node name="checkpoint" type="AudioStreamPlayer" parent="Player/Sounds"]
+stream = ExtResource( 32 )
+volume_db = 12.0
+
+[node name="icecream" type="AudioStreamPlayer" parent="Player/Sounds"]
+stream = ExtResource( 10 )
+
+[node name="balloon" type="AudioStreamPlayer" parent="Player/Sounds"]
+stream = ExtResource( 33 )
+volume_db = 14.0
+
+[node name="startfinish" type="AudioStreamPlayer" parent="Player/Sounds"]
+stream = ExtResource( 34 )
+volume_db = -8.0
+
+[node name="LandSoundTimer" type="Timer" parent="Player"]
+wait_time = 0.5
+one_shot = true
+
+[node name="Sprite" type="AnimatedSprite" parent="Player"]
+frames = SubResource( 76 )
+animation = "cheering"
+frame = 1
+playing = true
+
+[node name="CollisionBoard" type="CollisionShape2D" parent="Player"]
+position = Vector2( 0.105469, 27.3525 )
+rotation = 1.5708
+shape = SubResource( 77 )
+
+[node name="CollisionRider" type="CollisionShape2D" parent="Player"]
+visible = false
+position = Vector2( -2.38419e-07, 1.66211 )
+shape = SubResource( 78 )
+
+[node name="RiderDetector" type="Area2D" parent="Player"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/RiderDetector"]
+position = Vector2( 0, -8 )
+shape = SubResource( 79 )
+
+[node name="CrashTimer" type="Timer" parent="Player/RiderDetector"]
+one_shot = true
+
+[node name="PickupDetector" type="Area2D" parent="Player"]
+visible = false
+position = Vector2( 0.0976563, -3.67383 )
+collision_layer = 7
+collision_mask = 7
+script = ExtResource( 12 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/PickupDetector"]
+position = Vector2( -0.102784, -1.17667 )
+shape = SubResource( 80 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Player/PickupDetector"]
+position = Vector2( 0, 19.6367 )
+shape = SubResource( 81 )
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+current = true
+smoothing_speed = 50.0
+offset_h = 0.75
+offset_v = 0.5
+drag_margin_left = 1.0
+drag_margin_top = 1.0
+drag_margin_right = 1.0
+drag_margin_bottom = 1.0
+
+[node name="Start" type="Area2D" parent="."]
+position = Vector2( -21857.5, -5438.04 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Start"]
+position = Vector2( -41.96, -30.1535 )
+shape = SubResource( 82 )
+
+[node name="wood8" type="Sprite" parent="Start"]
+position = Vector2( 42.9189, 21.6338 )
+texture = ExtResource( 13 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 10, 100 )
+
+[node name="start" type="Sprite" parent="Start"]
+position = Vector2( 0, -50 )
+texture = ExtResource( 21 )
+
+[node name="Finish" type="Area2D" parent="."]
+position = Vector2( 26969.4, 1761.54 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Finish"]
+position = Vector2( -45.2754, -27.8066 )
+shape = SubResource( 83 )
+
+[node name="wood8" type="Sprite" parent="Finish"]
+position = Vector2( 42.9189, 21.6338 )
+texture = ExtResource( 13 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 10, 100 )
+
+[node name="start" type="Sprite" parent="Finish"]
+position = Vector2( 0, -50 )
+texture = ExtResource( 21 )
+
+[node name="Intro" type="Node2D" parent="."]
+position = Vector2( 148.677, 196.532 )
+z_index = 1
+
+[node name="wood" type="Sprite" parent="Intro"]
+position = Vector2( -24058, -6132.73 )
+texture = ExtResource( 13 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 10, 200 )
+
+[node name="intro_jump" type="Sprite" parent="Intro/wood"]
+position = Vector2( -0.417969, -68.4971 )
+texture = ExtResource( 18 )
+
+[node name="wood2" type="Sprite" parent="Intro"]
+position = Vector2( -23567.2, -5992.73 )
+texture = ExtResource( 13 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 10, 200 )
+
+[node name="intro_slower" type="Sprite" parent="Intro/wood2"]
+position = Vector2( 0.65625, -73.3069 )
+texture = ExtResource( 19 )
+
+[node name="wood3" type="Sprite" parent="Intro"]
+position = Vector2( -23087.4, -5879.34 )
+texture = ExtResource( 13 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 10, 200 )
+
+[node name="intro_faster" type="Sprite" parent="Intro/wood3"]
+position = Vector2( 0, -60 )
+texture = ExtResource( 16 )
+[connection signal="body_entered" from="Player" to="Player" method="_on_Player_body_entered"]
+[connection signal="body_exited" from="Player" to="Player" method="_on_Player_body_exited"]
+[connection signal="timeout" from="Player/TorqueTimer" to="Player" method="_on_TorqueTimer_timeout"]
+[connection signal="timeout" from="Player/GravityTimer" to="Player" method="_on_GravityTimer_timeout"]
+[connection signal="timeout" from="Player/PickupTimer" to="Player" method="_on_GravityTimer_timeout"]
+[connection signal="timeout" from="Player/AnimTimer" to="Player" method="_on_AnimTimer_timeout"]
+[connection signal="timeout" from="Player/LandSoundTimer" to="Player" method="_on_LandSoundTimer_timeout"]
+[connection signal="body_entered" from="Player/RiderDetector" to="Player" method="_on_RiderDetector_body_entered"]
+[connection signal="timeout" from="Player/RiderDetector/CrashTimer" to="Player" method="_on_CrashTimer_timeout"]
+[connection signal="area_shape_entered" from="Player/PickupDetector" to="Player/PickupDetector" method="_on_PickupDetector_area_shape_entered"]
+[connection signal="area_entered" from="Start" to="Player/PickupDetector" method="_on_Start_area_entered"]
+[connection signal="area_entered" from="Finish" to="Player/PickupDetector" method="_on_Finish_area_entered"]

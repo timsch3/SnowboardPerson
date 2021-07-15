@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/speedup (355).wav-32dbb0014c93b2fa49007b27d44805eb.sample"
+
+[deps]
+
+source_file="res://cakewalk/icecream/Audio/speedup (355).wav"
+dest_files=[ "res://.import/speedup (355).wav-32dbb0014c93b2fa49007b27d44805eb.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

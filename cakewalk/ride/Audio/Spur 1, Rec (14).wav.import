@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Spur 1, Rec (14).wav-53eb03147a30aa9f8ea173d046fdf385.sample"
+
+[deps]
+
+source_file="res://cakewalk/ride/Audio/Spur 1, Rec (14).wav"
+dest_files=[ "res://.import/Spur 1, Rec (14).wav-53eb03147a30aa9f8ea173d046fdf385.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
